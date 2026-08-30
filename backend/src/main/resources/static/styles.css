@@ -1,6 +1,3 @@
-/* Pedro Securities CSS entry point. Keep module order: base -> features -> overrides. */
-@import url("/css/core.css");
-@import url("/css/query.css");
-@import url("/css/report.css");
-@import url("/css/history.css");
+@import url("/css/base.css");
+@import url("/css/components.css");
 @import url("/css/responsive.css");
