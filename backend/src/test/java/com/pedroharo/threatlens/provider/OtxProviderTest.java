@@ -18,8 +18,9 @@ class OtxProviderTest {
     void normalizesPulseEvidenceWithoutDependingOnProviderSpecificJsonElsewhere() throws Exception {
         try (InputStream input = getClass().getResourceAsStream("/fixtures/otx-demo.json")) {
             var raw = mapper.readTree(input);
-            var report = provider.normalize(raw,
-                    new Indicator("demo.example", "demo.example", IndicatorType.DOMAIN));
+var report = provider.normalize(raw,
+        new Indicator("demo.example", "demo.example", IndicatorType.DOMAIN),
+        true);
 
             assertThat(report.pulseCount()).isEqualTo(4);
             assertThat(report.reputation()).isEqualTo(-4);
