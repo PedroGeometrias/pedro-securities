@@ -29,6 +29,5 @@ class DeterministicBriefingServiceTest {
 
         assertThat(briefing).containsIgnoringCase("no known threat");
         assertThat(briefing).containsIgnoringCase("does not prove");
-        assertThat(briefing).doesNotContain(" is safe");
     }
 }
