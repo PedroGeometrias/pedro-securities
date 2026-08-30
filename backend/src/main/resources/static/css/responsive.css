@@ -1,0 +1,103 @@
+/* Responsive and reduced-motion overrides */
+
+@media (max-width: 900px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .metric-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .metric-card {
+    border-bottom: 1px solid var(--line);
+  }
+  .history-filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .query-intro {
+    display: block;
+  }
+  .query-intro > p:last-child {
+    margin-top: 16px; padding-left: 12px;
+  }
+  .overview-grid, .provider-grid {
+    gap: 12px;
+  }
+  .metric-card:first-child {
+    padding-left: 14px;
+  }
+  .metric-card:last-child {
+    padding-right: 14px;
+  }
+}
+@media (max-width: 680px) {
+  main, footer {
+    width: min(100% - 24px, var(--max-width));
+  }
+  .topbar {
+    align-items: flex-start; padding: 10px 12px;
+  }
+  .system-status .status-pill:nth-child(n + 3) {
+    display: none;
+  }
+  .query-shell {
+    padding-top: 38px;
+  }
+  .search-form, .file-form {
+    grid-template-columns: 1fr;
+  }
+  .search-form .primary-button {
+    height: 46px;
+  }
+  .result-heading, .section-heading {
+    align-items: flex-start; flex-direction: column;
+  }
+  .result-actions, .history-actions {
+    width: 100%;
+  }
+  .result-actions button, .history-actions button {
+    flex: 1;
+  }
+  .risk-card {
+    grid-template-columns: 78px 1fr;
+  }
+  .risk-dial {
+    width: 74px;
+  }
+  .metric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .provider-grid {
+    grid-template-columns: 1fr;
+  }
+  .provider-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .table-wrap {
+    overflow-x: auto;
+  }
+  table {
+    min-width: 680px;
+  }
+  .history-filters {
+    grid-template-columns: 1fr;
+  }
+  .history-item {
+    grid-template-columns: 40px 1fr auto;
+  }
+  .history-meta {
+    display: none;
+  }
+  .native-note {
+    display: none;
+  }
+  footer {
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important; transition: none !important; animation-duration: 0.001s !important;
+  }
+}

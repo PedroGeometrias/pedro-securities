@@ -1,0 +1,101 @@
+/* History and verification dialogs */
+
+.history-shell {
+  padding: 52px 0 80px; border-top: 1px solid var(--line);
+}
+.history-heading {
+  align-items: center;
+}
+.history-filters {
+  display: grid; grid-template-columns: 1.5fr repeat(3, 1fr) auto; gap: 9px; margin-bottom: 10px;
+  padding: 14px 0 18px; border-bottom: 1px solid var(--line);
+}
+.history-filters label {
+  color: var(--muted); font: 0.61rem var(--font-mono);
+}
+.history-filters input, .history-filters select {
+  width: 100%; height: 36px; display: block; margin-top: 5px; padding: 0 9px;
+  border: 1px solid var(--line); border-radius: 0; outline: none; background: transparent;
+  color: var(--text);
+}
+.history-filters input:focus, .history-filters select:focus {
+  border-color: var(--accent);
+}
+.history-filters .secondary-button {
+  align-self: end;
+}
+.history-list {
+  display: grid; gap: 5px;
+}
+.history-item {
+  width: 100%; display: grid; grid-template-columns: 46px 1fr auto auto; align-items: center; gap: 13px;
+  padding: 12px 0; border-width: 0 0 1px; border-style: solid; border-color: var(--line);
+  background: transparent; color: var(--text); text-align: left; cursor: pointer;
+}
+.history-item:hover {
+  border-color: var(--accent); background: var(--surface);
+}
+.history-score {
+  padding-right: 10px; border-right: 1px solid var(--line); color: var(--accent); text-align: center;
+  font: 700 0.9rem var(--font-mono);
+}
+.history-copy strong, .history-copy small {
+  display: block;
+}
+.history-copy strong {
+  overflow-wrap: anywhere; font: 600 0.75rem var(--font-mono);
+}
+.history-copy small, .history-meta {
+  color: var(--faint); font-size: 0.64rem;
+}
+.history-verdict {
+  font: 0.61rem var(--font-mono);
+}
+.history-verdict.high-risk {
+  color: var(--danger);
+}
+.history-verdict.suspicious {
+  color: var(--warning);
+}
+.history-verdict.no-known-threat {
+  color: var(--safe);
+}
+dialog {
+  width: min(540px, calc(100% - 28px)); padding: 0; border: 0; background: transparent;
+  color: var(--text);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+.dialog-card {
+  padding: 22px; border: 1px solid var(--line-strong); border-top-color: var(--accent);
+  background: var(--surface);
+}
+.dialog-header {
+  display: flex; justify-content: space-between; gap: 18px;
+}
+.dialog-header h2 {
+  margin: 0;
+}
+.dialog-card > p {
+  color: var(--muted); font-size: 0.8rem;
+}
+.icon-button {
+  width: 32px; height: 32px; border: 1px solid var(--line); background: transparent;
+}
+.dialog-file {
+  display: block; margin: 16px 0; color: var(--muted); font-size: 0.7rem;
+}
+.dialog-file input {
+  width: 100%; display: block; margin-top: 6px; padding: 12px; border: 1px dashed var(--line-strong);
+  background: transparent; color: var(--text);
+}
+.verify-result {
+  margin-bottom: 11px; padding: 10px; border: 1px solid var(--line); font-size: 0.76rem;
+}
+.verify-result.valid {
+  color: var(--safe);
+}
+.verify-result.invalid {
+  color: var(--danger);
+}

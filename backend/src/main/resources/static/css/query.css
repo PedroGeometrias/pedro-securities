@@ -1,0 +1,133 @@
+/* Query and file investigation controls */
+
+.query-shell {
+  padding: 64px 0 56px;
+}
+.query-intro {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 430px); column-gap: 48px;
+  align-items: end;
+}
+.eyebrow, .section-label {
+  grid-column: 1; margin: 0 0 7px; color: var(--accent); font: 700 0.65rem var(--font-mono);
+  letter-spacing: 0.12em;
+}
+.query-intro h1 {
+  grid-column: 1; margin: 0; font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+.query-intro > p:last-child {
+  grid-column: 2; grid-row: 1 / span 2; margin: 0; padding-left: 18px;
+  border-left: 1px solid var(--line-strong); color: var(--muted);
+}
+.demo-banner {
+  display: flex; align-items: center; gap: 10px; margin-top: 24px; padding: 10px 12px;
+  border-width: 0 0 0 1px; border-style: solid; border-color: var(--line);
+  border-left-color: var(--accent); background: transparent; color: var(--muted); font-size: 0.78rem;
+}
+.pulse-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+}
+.text-action {
+  padding: 0; border: 0; background: transparent; color: var(--accent); cursor: pointer;
+  text-decoration: underline;
+}
+.query-panel {
+  margin-top: 40px; padding: 20px 0; border-bottom: 1px solid var(--line);
+}
+.query-tabs {
+  display: flex; gap: 22px; margin-bottom: 18px;
+}
+.query-tab {
+  padding: 5px 0 8px; border: 0; border-bottom: 1px solid transparent; background: transparent;
+  color: var(--muted); cursor: pointer; font-family: var(--font-mono); font-size: 0.8rem;
+}
+.query-tab.active {
+  border-color: var(--accent); color: var(--text);
+}
+.search-form, .file-form {
+  display: grid; grid-template-columns: 1fr auto; gap: 9px;
+}
+.input-wrap {
+  position: relative;
+}
+.input-icon {
+  position: absolute; top: 50%; left: 16px; transform: translateY(-50%); color: var(--accent);
+  font: 700 1rem var(--font-mono);
+}
+.input-wrap input {
+  width: 100%; height: 54px; padding: 0 15px 0 38px; border: 1px solid var(--line-strong);
+  border-radius: 0; outline: none; background: transparent; color: var(--text);
+  font-family: var(--font-mono);
+}
+.input-wrap input:focus {
+  border-color: var(--accent); box-shadow: none;
+}
+.primary-button, .secondary-button, .icon-button {
+  border-radius: 0; cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.primary-button {
+  min-height: 42px; padding: 0 19px; border: 1px solid var(--accent); background: transparent;
+  color: var(--accent); font: 700 0.72rem var(--font-mono); letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.search-form .primary-button {
+  height: 54px;
+}
+.primary-button:hover {
+  background: var(--accent); color: var(--bg);
+}
+.secondary-button {
+  min-height: 36px; padding: 0 12px; border: 1px solid var(--line-strong); background: transparent;
+  color: var(--text); font-family: var(--font-mono); font-size: 0.76rem;
+}
+.secondary-button:hover {
+  border-color: var(--accent); color: var(--accent);
+}
+.primary-button:disabled, .secondary-button:disabled {
+  opacity: 0.45; cursor: wait;
+}
+.input-hint, .privacy-note {
+  margin: 8px 0 0; color: var(--faint); font-size: 0.72rem;
+}
+.drop-zone {
+  min-height: 76px; display: flex; align-items: center; gap: 13px; padding: 12px 15px;
+  border: 1px dashed var(--line-strong); border-radius: 0; background: transparent; cursor: pointer;
+}
+.drop-zone:hover, .drop-zone.dragging {
+  border-color: var(--accent);
+}
+.drop-zone input {
+  position: absolute; opacity: 0; pointer-events: none;
+}
+.drop-zone strong, .drop-zone small {
+  display: block;
+}
+.drop-zone small {
+  margin-top: 2px; color: var(--muted);
+}
+.file-symbol {
+  width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line-strong);
+  color: var(--accent); font: 700 1rem var(--font-mono);
+}
+.activity-message {
+  margin: -10px 0 28px; padding: 11px 13px; border-width: 0 0 0 1px; border-style: solid;
+  border-color: var(--line); border-left-color: var(--accent); background: transparent;
+  color: var(--muted); font-size: 0.78rem;
+}
+.activity-message.loading::before {
+  content: ""; width: 9px; height: 9px; display: inline-block; margin-right: 9px;
+  border: 2px solid var(--line-strong); border-top-color: var(--accent); border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.activity-message.error {
+  border-left-color: var(--danger); color: #fca5a5;
+}
+.activity-message.success {
+  border-left-color: var(--safe);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
